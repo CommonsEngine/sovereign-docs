@@ -1,10 +1,14 @@
 import express from "express";
 
-export default () => {
+export default (ctx) => {
   const router = express.Router();
 
-  router.get("/", (_req, res) => {
-    res.send(`<h1>Docs</h1><p>Kickstart the Docs js plugin for Sovereign.</p>`);
+  router.get("/", (req, res) => {
+    return res.render("docs/index");
+  });
+
+  router.get("/:id", (req, res) => {
+    return res.render("docs/[id]");
   });
 
   return router;
