@@ -1,0 +1,45 @@
+{
+  "id": "@sovereign/docs",
+  "namespace": "docs",
+  "name": "Docs",
+  "description": "Sovereign Docs",
+  "version": "0.1.0",
+  "type": "project",
+  "framework": "js",
+  "enabled": true,
+  "devOnly": true,
+  "enrollStrategy": "auto",
+  "entryPoints": {
+    "api": "routes/api/index.js",
+    "web": "routes/web/index.js"
+  },
+  "author": "Kasun Benthara",
+  "license": "AGPL-3.0",
+  "ui": {
+    "icon": { "name": "default", "sidebarHidden": false },
+    "palette": {
+      "primary": "violet-500",
+      "accent": "rose-500"
+    },
+    "layout": {
+      "sidebar": true,
+      "header": true
+    }
+  },
+  "sovereign": {
+    "schemaVersion": 1,
+    "compat": { "platform": "^0.8.0", "node": ">=20" },
+    "platformCapabilities": {
+      "database": false,
+      "git": false,
+      "fs": false
+    },
+    "userCapabilities": [
+      {
+        "key": "user:plugin.docs.feature",
+        "description": "Enable the Docs plugin.",
+        "roles": ["platform:user"]
+      }
+    ]
+  }
+}
